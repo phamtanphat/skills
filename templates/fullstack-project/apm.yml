@@ -1,0 +1,74 @@
+# apm.yml — Fullstack Project Template
+# Copy file này vào thư mục gốc của dự án Fullstack
+
+name: my-fullstack-app         # ← Đổi tên dự án
+version: 1.0.0
+
+skills:
+  # Frontend
+  - name: react-patterns
+    description: React/TypeScript patterns chuẩn
+    path: ~/Desktop/skills/skills/languages/javascript/react-patterns.md
+    activate:
+      include: ["**/*.tsx", "**/*.ts", "**/*.jsx", "**/*.js"]
+
+  # Backend
+  - name: python-review
+    description: Quy chuẩn Python
+    path: ~/Desktop/skills/skills/languages/python/code-review.md
+    activate:
+      include: ["**/*.py"]
+
+  # Architecture & Workflow
+  - name: clean-architecture
+    description: Clean Architecture guide
+    path: ~/Desktop/skills/skills/architecture/clean-architecture.md
+    activate:
+      always: true
+
+  - name: microservices
+    description: Microservices patterns
+    path: ~/Desktop/skills/skills/architecture/microservices.md
+    activate:
+      always: true
+
+  - name: git-workflow
+    description: Git workflow
+    path: ~/Desktop/skills/skills/workflow/git-workflow.md
+    activate:
+      always: true
+
+  # DevOps
+  - name: docker-guide
+    description: Docker guide
+    path: ~/Desktop/skills/skills/devops/docker-guide.md
+    activate:
+      include: ["**/Dockerfile", "**/docker-compose*.yml"]
+
+  - name: cicd-pipeline
+    description: CI/CD pipeline guide
+    path: ~/Desktop/skills/skills/devops/cicd-pipeline.md
+    activate:
+      include: ["**/.github/workflows/*.yml"]
+
+mcpServers:
+  serena:
+    command: uvx
+    args:
+      - "--from"
+      - "git+https://github.com/oraios/serena"
+      - "serena"
+      - "start-mcp-server"
+    transport: stdio
+
+  context7:
+    command: npx
+    args: ["-y", "@upstash/context7-mcp"]
+    transport: stdio
+    env:
+      CONTEXT7_API_KEY: "ctx7sk-31f118e9-1ca9-4dfc-8a59-4cd58ec0a630"
+
+  stitch:
+    serverUrl: "https://stitch.googleapis.com/mcp"
+    headers:
+      X-Goog-Api-Key: "YOUR_STITCH_API_KEY"

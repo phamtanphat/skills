@@ -1,0 +1,68 @@
+# apm.yml — Python Project Template
+# Copy file này vào thư mục gốc của dự án Python/FastAPI
+
+name: my-python-app            # ← Đổi tên dự án
+version: 1.0.0
+
+skills:
+  - name: python-review
+    description: Quy chuẩn PEP8 và Python best practices
+    path: ~/Desktop/skills/skills/languages/python/code-review.md
+    activate:
+      include: ["**/*.py"]
+
+  - name: fastapi-patterns
+    description: FastAPI patterns chuẩn
+    path: ~/Desktop/skills/skills/languages/python/fastapi-patterns.md
+    activate:
+      include: ["**/*.py"]
+
+  - name: clean-architecture
+    description: Clean Architecture guide
+    path: ~/Desktop/skills/skills/architecture/clean-architecture.md
+    activate:
+      always: true
+
+  - name: docker-guide
+    description: Docker containerization guide
+    path: ~/Desktop/skills/skills/devops/docker-guide.md
+    activate:
+      include: ["**/Dockerfile", "**/docker-compose*.yml"]
+
+  - name: unit-test-guide
+    description: Hướng dẫn viết unit test với pytest
+    path: ~/Desktop/skills/skills/testing/unit-test-guide.md
+    activate:
+      include: ["**/test_*.py", "**/*_test.py"]
+
+  - name: git-workflow
+    description: Git workflow chuẩn
+    path: ~/Desktop/skills/skills/workflow/git-workflow.md
+    activate:
+      always: true
+
+mcpServers:
+  serena:
+    command: uvx
+    args:
+      - "--from"
+      - "git+https://github.com/oraios/serena"
+      - "serena"
+      - "start-mcp-server"
+    transport: stdio
+
+  context7:
+    command: npx
+    args: ["-y", "@upstash/context7-mcp"]
+    transport: stdio
+    env:
+      CONTEXT7_API_KEY: "ctx7sk-31f118e9-1ca9-4dfc-8a59-4cd58ec0a630"
+
+  # Bỏ comment nếu dùng Supabase
+  # supabase:
+  #   command: npx
+  #   args: ["-y", "@supabase/mcp-server-supabase@latest"]
+  #   transport: stdio
+  #   env:
+  #     SUPABASE_URL: "https://your-project.supabase.co"
+  #     SUPABASE_KEY: "your-service-role-key"

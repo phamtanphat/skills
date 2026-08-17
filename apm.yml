@@ -4,107 +4,203 @@
 # ═══════════════════════════════════════════════════════════════
 name: my-ai-skills
 version: 2.0.0
-description: Bộ kỹ năng đa ngôn ngữ và công cụ MCP tích hợp
+description: Bộ kỹ năng Mobile (Android/iOS) và công cụ MCP tích hợp
 
 # ───────────────────────────────────────────────────────────────
 # SKILLS — Hướng dẫn & quy chuẩn cho AI
+# Tổ chức theo features: coding / design / structure / testing / delivery
 # ───────────────────────────────────────────────────────────────
 skills:
 
-  # --- Ngôn ngữ lập trình ---
+  # ══════════════════════════════
+  # FEATURE: coding
+  # ══════════════════════════════
+
+  # --- Dart / Flutter ---
   - name: dart-flutter-review
     description: Quy chuẩn Riverpod, Clean Architecture cho Flutter
-    path: ./skills/languages/dart/flutter/flutter-code-review.md
+    path: ./features/dart/skills/flutter/flutter-code-review.md
     activate:
       include: ["**/*.dart"]
 
   - name: flutter-bloc-firebase
     description: "cursor.directory: Flutter + Bloc/Cubit + Firebase rules"
-    path: ./skills/languages/dart/flutter/rules-bloc-firebase.md
+    path: ./features/dart/skills/flutter/rules-bloc-firebase.md
     activate:
       include: ["**/*.dart"]
 
   - name: flutter-clean-arch-bloc
     description: "cursor.directory: Clean Architecture + Feature-First + flutter_bloc (with Dartz, GetIt)"
-    path: ./skills/languages/dart/flutter/rules-clean-arch-bloc.md
+    path: ./features/dart/skills/flutter/rules-clean-arch-bloc.md
     activate:
       include: ["**/*.dart"]
 
   - name: dart-general-rules
     description: "cursor.directory: Senior Dart guidelines + Riverpod/getIt/AutoRoute Flutter principles"
-    path: ./skills/languages/dart/flutter/rules-dart-general.md
+    path: ./features/dart/skills/flutter/rules-dart-general.md
     activate:
       include: ["**/*.dart"]
 
   - name: flutter-provider-bloc
     description: "cursor.directory: Provider (ephemeral) + Bloc (app state) + private widget classes"
-    path: ./skills/languages/dart/flutter/rules-provider-bloc.md
+    path: ./features/dart/skills/flutter/rules-provider-bloc.md
     activate:
       include: ["**/*.dart"]
 
   - name: flutter-riverpod-supabase
     description: "cursor.directory: Flutter + Riverpod + Supabase rules"
-    path: ./skills/languages/dart/flutter/rules-riverpod-supabase.md
+    path: ./features/dart/skills/flutter/rules-riverpod-supabase.md
     activate:
       include: ["**/*.dart"]
 
+  - name: riverpod-patterns
+    description: Riverpod patterns chuẩn cho Flutter
+    path: ./features/dart/skills/flutter/riverpod-patterns.md
+    activate:
+      include: ["**/*.dart"]
+
+  - name: dart-style-guide
+    description: Dart style guide chung
+    path: ./features/dart/skills/dart-style-guide.md
+    activate:
+      include: ["**/*.dart"]
+
+  # --- Swift / iOS ---
+  - name: ios-patterns
+    description: iOS patterns (Swift, UIKit, SwiftUI)
+    path: ./features/swift/skills/ios-patterns.md
+    activate:
+      include: ["**/*.swift"]
+
+  # --- Python ---
   - name: python-review
     description: Quy chuẩn PEP8 và xử lý logic cho Python
-    path: ./skills/languages/python/code-review.md
+    path: ./features/python/skills/code-review.md
     activate:
       include: ["**/*.py"]
 
+  - name: fastapi-patterns
+    description: FastAPI patterns chuẩn
+    path: ./features/python/skills/fastapi-patterns.md
+    activate:
+      include: ["**/*.py"]
+
+  - name: pep8-guide
+    description: PEP8 style guide
+    path: ./features/python/skills/pep8-guide.md
+    activate:
+      include: ["**/*.py"]
+
+  # --- JavaScript / TypeScript ---
   - name: javascript-review
     description: Quy chuẩn React/TypeScript
-    path: ./skills/languages/javascript/react-patterns.md
+    path: ./features/javascript/skills/react-patterns.md
     activate:
       include: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"]
 
-  # --- Workflow & Quy trình ---
+  - name: typescript-guide
+    description: TypeScript best practices
+    path: ./features/javascript/skills/typescript-guide.md
+    activate:
+      include: ["**/*.ts", "**/*.tsx"]
+
+  # --- Workflow ---
   - name: git-workflow
     description: Quy trình Git chuẩn (branch, commit, PR)
-    path: ./skills/workflow/git-workflow.md
+    path: ./features/workflow/skills/git-workflow.md
     activate:
       always: true
 
   - name: code-review-process
     description: Quy trình review code
-    path: ./skills/workflow/code-review-process.md
+    path: ./features/workflow/skills/code-review-process.md
     activate:
       always: true
 
-  # --- Kiến trúc ---
+  - name: task-management
+    description: Quản lý task & sprint
+    path: ./features/workflow/skills/task-management.md
+    activate:
+      always: true
+
+  # ══════════════════════════════
+  # FEATURE: structure
+  # ══════════════════════════════
+
   - name: clean-architecture
     description: Hướng dẫn Clean Architecture
-    path: ./skills/architecture/clean-architecture.md
+    path: ./features/structure/skills/architecture/clean-architecture.md
     activate:
       always: true
 
-  # --- Testing ---
+  - name: design-patterns
+    description: Design Patterns phổ biến
+    path: ./features/structure/skills/architecture/design-patterns.md
+    activate:
+      always: true
+
+  - name: microservices
+    description: Microservices patterns
+    path: ./features/structure/skills/architecture/microservices.md
+    activate:
+      always: true
+
+  # ══════════════════════════════
+  # FEATURE: testing
+  # ══════════════════════════════
+
   - name: unit-test-guide
     description: Hướng dẫn viết unit test
-    path: ./skills/testing/unit-test-guide.md
+    path: ./features/testing/skills/unit-test-guide.md
     activate:
       include: ["**/*_test.*", "**/*.test.*", "**/test/**"]
 
-  # --- DevOps ---
+  - name: integration-test
+    description: Hướng dẫn integration test
+    path: ./features/testing/skills/integration-test.md
+    activate:
+      include: ["**/*_test.*", "**/*.test.*", "**/test/**"]
+
+  - name: e2e-test
+    description: Hướng dẫn E2E test
+    path: ./features/testing/skills/e2e-test.md
+    activate:
+      include: ["**/*.e2e.*", "**/e2e/**"]
+
+  # ══════════════════════════════
+  # FEATURE: delivery
+  # ══════════════════════════════
+
   - name: docker-guide
     description: Hướng dẫn Docker & container
-    path: ./skills/devops/docker-guide.md
+    path: ./features/delivery/skills/docker-guide.md
     activate:
       include: ["**/Dockerfile", "**/docker-compose*.yml"]
 
+  - name: cicd-pipeline
+    description: CI/CD pipeline guide
+    path: ./features/delivery/skills/cicd-pipeline.md
+    activate:
+      include: ["**/.github/workflows/*.yml"]
+
+  - name: kubernetes
+    description: Kubernetes deployment guide
+    path: ./features/delivery/skills/kubernetes.md
+    activate:
+      include: ["**/k8s/**", "**/*.k8s.yml"]
+
 # ───────────────────────────────────────────────────────────────
 # MCP SERVERS — Công cụ cho AI sử dụng
-# Docs cho từng MCP: xem thư mục ./mcps/
+# Docs theo feature: xem ./features/<feature>/mcps/
+# ───────────────────────────────────────────────────────────────
 mcpServers:
 
   # ══════════════════════════════
-  # CODE TOOLS
+  # FEATURE: coding — Code Tools
+  # Docs: ./features/coding/mcps/
   # ══════════════════════════════
 
   # Serena — Code intelligence, symbol search, refactoring
-  # Docs: ./mcps/code-tools/serena.md
   serena:
     command: uvx
     args:
@@ -115,7 +211,6 @@ mcpServers:
     transport: stdio
 
   # Context7 — Library documentation fetcher (no hallucination)
-  # Docs: ./mcps/code-tools/context7.md
   context7:
     command: npx
     args: ["-y", "@upstash/context7-mcp"]
@@ -124,7 +219,7 @@ mcpServers:
       CONTEXT7_API_KEY: "ctx7sk-31f118e9-1ca9-4dfc-8a59-4cd58ec0a630"
 
   # GitHub — Repository management, issues, PRs (Official MCP)
-  # Docs: ./mcps/code-tools/github.md
+  # Docs: ./features/coding/mcps/github.md
   # github:
   #   command: npx
   #   args: ["-y", "@modelcontextprotocol/server-github"]
@@ -133,39 +228,51 @@ mcpServers:
   #     GITHUB_PERSONAL_ACCESS_TOKEN: "ghp_your_token_here"
 
   # Git — Local git operations (Official MCP)
-  # Docs: ./mcps/code-tools/git.md
+  # Docs: ./features/coding/mcps/git.md
   # git:
   #   command: uvx
   #   args: ["mcp-server-git", "--repository", "."]
   #   transport: stdio
 
   # ══════════════════════════════
-  # UTILITIES
+  # FEATURE: design — UI/UX Tools
+  # Docs: ./features/design/mcps/
   # ══════════════════════════════
 
+  # UI UX Pro Max ⭐ 118k — Design intelligence (Flutter, SwiftUI, Jetpack Compose)
+  # Docs: ./features/design/mcps/ui-ux-pro-max.md
+  # Install: npx ui-ux-pro-max-cli init --ai claude
+  # Supports: Flutter, SwiftUI, Jetpack Compose, React Native + 79 visual styles
+  # (Cài thủ công vào project, không qua apm inject)
+
   # Stitch — UI wireframe & design generation (Google)
-  # Docs: ./mcps/utilities/stitch.md
+  # Docs: ./features/design/mcps/stitch.md
   stitch:
     serverUrl: "https://stitch.googleapis.com/mcp"
     headers:
       X-Goog-Api-Key: "YOUR_STITCH_API_KEY"
 
-  # Memory — Persistent AI memory across sessions (Official MCP)
-  # Docs: ./mcps/utilities/memory.md
-  # memory:
-  #   command: npx
-  #   args: ["-y", "@modelcontextprotocol/server-memory"]
-  #   transport: stdio
-
-  # Fetch — Web content fetcher, HTML→Markdown (Official MCP)
-  # Docs: ./mcps/utilities/fetch.md
+  # Fetch — Web content fetcher (design reference)
+  # Docs: ./features/design/mcps/fetch.md
   # fetch:
   #   command: uvx
   #   args: ["mcp-server-fetch"]
   #   transport: stdio
 
-  # Filesystem — File system access with access control (Official MCP)
-  # Docs: ./mcps/utilities/filesystem.md
+  # ══════════════════════════════
+  # FEATURE: structure — Infra & DB
+  # Docs: ./features/structure/mcps/
+  # ══════════════════════════════
+
+  # Memory — Persistent AI memory across sessions
+  # Docs: ./features/structure/mcps/memory.md
+  # memory:
+  #   command: npx
+  #   args: ["-y", "@modelcontextprotocol/server-memory"]
+  #   transport: stdio
+
+  # Filesystem — File system access with access control
+  # Docs: ./features/structure/mcps/filesystem.md
   # filesystem:
   #   command: npx
   #   args:
@@ -174,28 +281,8 @@ mcpServers:
   #     - "/Users/phatdroid94/Desktop"   # ← Thư mục được phép truy cập
   #   transport: stdio
 
-  # Playwright — Browser automation & E2E testing (Microsoft)
-  # Docs: ./mcps/utilities/playwright.md
-  # playwright:
-  #   command: npx
-  #   args: ["-y", "@playwright/mcp@latest"]
-  #   transport: stdio
-
-  # Brave Search — Real-time web search (privacy-focused)
-  # Docs: ./mcps/utilities/brave-search.md
-  # brave-search:
-  #   command: npx
-  #   args: ["-y", "@modelcontextprotocol/server-brave-search"]
-  #   transport: stdio
-  #   env:
-  #     BRAVE_API_KEY: "your-brave-api-key-here"
-
-  # ══════════════════════════════
-  # DATABASES (bỏ comment khi cần)
-  # ══════════════════════════════
-
   # Supabase — BaaS: DB, Auth, Storage, Edge Functions
-  # Docs: ./mcps/databases/supabase.md
+  # Docs: ./features/structure/mcps/supabase.md
   # supabase:
   #   command: npx
   #   args: ["-y", "@supabase/mcp-server-supabase@latest"]
@@ -204,8 +291,8 @@ mcpServers:
   #     SUPABASE_URL: "https://your-project.supabase.co"
   #     SUPABASE_KEY: "your-service-role-key"
 
-  # PostgreSQL — Direct SQL access (Official MCP)
-  # Docs: ./mcps/databases/postgres.md
+  # PostgreSQL — Direct SQL access
+  # Docs: ./features/structure/mcps/postgres.md
   # postgres:
   #   command: npx
   #   args: ["-y", "@modelcontextprotocol/server-postgres"]
@@ -214,7 +301,7 @@ mcpServers:
   #     DATABASE_URL: "postgresql://user:password@localhost:5432/mydb"
 
   # Redis — Cache & session inspection
-  # Docs: ./mcps/databases/redis.md
+  # Docs: ./features/structure/mcps/redis.md
   # redis:
   #   command: npx
   #   args: ["-y", "mcp-redis"]
@@ -222,12 +309,8 @@ mcpServers:
   #   env:
   #     REDIS_URL: "redis://localhost:6379"
 
-  # ══════════════════════════════
-  # CLOUD (bỏ comment khi cần)
-  # ══════════════════════════════
-
   # AWS — Cloud infrastructure management
-  # Docs: ./mcps/cloud/aws.md
+  # Docs: ./features/structure/mcps/aws.md
   # aws:
   #   command: npx
   #   args: ["-y", "@aws/mcp-server"]
@@ -238,10 +321,36 @@ mcpServers:
   #     AWS_DEFAULT_REGION: "ap-southeast-1"
 
   # Vercel — Deployment & hosting management
-  # Docs: ./mcps/cloud/vercel.md
+  # Docs: ./features/structure/mcps/vercel.md
   # vercel:
   #   command: npx
   #   args: ["-y", "@vercel/mcp-adapter"]
   #   transport: stdio
   #   env:
   #     VERCEL_TOKEN: "YOUR_VERCEL_TOKEN"
+
+  # ══════════════════════════════
+  # FEATURE: testing — QA Tools
+  # Docs: ./features/testing/mcps/
+  # ══════════════════════════════
+
+  # Playwright — Browser automation & E2E testing
+  # Docs: ./features/testing/mcps/playwright.md
+  # playwright:
+  #   command: npx
+  #   args: ["-y", "@playwright/mcp@latest"]
+  #   transport: stdio
+
+  # ══════════════════════════════
+  # FEATURE: delivery — DevOps Tools
+  # Docs: ./features/delivery/mcps/
+  # ══════════════════════════════
+
+  # Brave Search — Real-time web search (changelogs, release notes)
+  # Docs: ./features/delivery/mcps/brave-search.md
+  # brave-search:
+  #   command: npx
+  #   args: ["-y", "@modelcontextprotocol/server-brave-search"]
+  #   transport: stdio
+  #   env:
+  #     BRAVE_API_KEY: "your-brave-api-key-here"

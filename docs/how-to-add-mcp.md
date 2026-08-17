@@ -7,33 +7,36 @@ Tìm MCP servers tại:
 - https://glama.ai/mcp/servers
 - npm: `npm search @modelcontextprotocol`
 
-## Bước 2 — Xác định loại MCP
+## Bước 2 — Xác định Feature
 
-| Loại | Thư mục |
-|------|---------|
-| Code tools | `mcps/code-tools/` |
-| Databases | `mcps/databases/` |
-| Cloud | `mcps/cloud/` |
-| Tiện ích khác | `mcps/utilities/` |
+| Feature | Thư mục doc | Ví dụ MCP |
+|---------|-------------|-----------|
+| Workflow / Code tools | `features/workflow/mcps/` | GitHub, Git, Context7, Serena |
+| Design | `features/design/mcps/` | Stitch, Fetch, UI UX Pro Max |
+| Structure | `features/structure/mcps/` | Supabase, Postgres, Redis, AWS, Vercel, GCP, Filesystem, Memory |
+| Testing | `features/testing/mcps/` | Playwright |
+| Delivery | `features/delivery/mcps/` | Brave Search |
 
 ## Bước 3 — Tạo file documentation
 
 ```bash
-# Ví dụ: Thêm MongoDB MCP
-touch mcps/databases/mongodb.md
+# Ví dụ: Thêm MongoDB MCP vào feature structure
+touch features/structure/mcps/mongodb.md
 ```
 
 Nội dung file:
 ```markdown
 # MongoDB MCP — Database Access
 
-# Cấu hình:
-# mongodb:
-#   command: npx
-#   args: ["-y", "@mongodb/mcp-server"]
-#   transport: stdio
-#   env:
-#     MONGODB_URI: "mongodb://localhost:27017"
+## Cấu hình (trong apm.yml):
+```yaml
+mongodb:
+  command: npx
+  args: ["-y", "@mongodb/mcp-server"]
+  transport: stdio
+  env:
+    MONGODB_URI: "mongodb://localhost:27017"
+```
 
 ## Capabilities
 - Query documents

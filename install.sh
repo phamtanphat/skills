@@ -123,32 +123,32 @@ apm-sync() {
   }
 
   # 1. Luôn nạp workflow chung
-  _inject_skill "skills/workflow/git-workflow.md"
+  _inject_skill "features/workflow/skills/git-workflow.md"
 
   # 2. Tự động nhận diện công nghệ
   if [ -f "pubspec.yaml" ]; then
     echo "📱 Phát hiện Flutter/Dart!"
-    _inject_skill "skills/languages/dart/flutter/flutter-code-review.md"
-    _inject_skill "skills/architecture/clean-architecture.md"
+    _inject_skill "features/dart/skills/flutter/flutter-code-review.md"
+    _inject_skill "features/structure/skills/architecture/clean-architecture.md"
 
   elif [ -f "package.json" ]; then
     if grep -q '"react"\|"next"' "package.json" 2>/dev/null; then
       echo "🌐 Phát hiện React/Next.js!"
-      _inject_skill "skills/languages/javascript/react-patterns.md"
-      _inject_skill "skills/architecture/clean-architecture.md"
+      _inject_skill "features/javascript/skills/react-patterns.md"
+      _inject_skill "features/structure/skills/architecture/clean-architecture.md"
     else
       echo "🟢 Phát hiện Node.js!"
-      _inject_skill "skills/languages/javascript/react-patterns.md"
+      _inject_skill "features/javascript/skills/react-patterns.md"
     fi
 
   elif [ -f "pyproject.toml" ] || [ -f "requirements.txt" ] || [ -f "Pipfile" ]; then
     echo "🐍 Phát hiện Python!"
-    _inject_skill "skills/languages/python/code-review.md"
-    _inject_skill "skills/architecture/clean-architecture.md"
+    _inject_skill "features/python/skills/code-review.md"
+    _inject_skill "features/structure/skills/architecture/clean-architecture.md"
 
   else
     echo "📦 Dự án generic — nạp skills cơ bản"
-    _inject_skill "skills/architecture/clean-architecture.md"
+    _inject_skill "features/structure/skills/architecture/clean-architecture.md"
   fi
 
   echo ""

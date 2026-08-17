@@ -1,56 +1,46 @@
 # AI Skills & MCP Config System
 
-Hệ thống quản lý skills và MCP servers cho AI assistant.
+Hệ thống quản lý skills và MCP servers cho AI assistant (Mobile-first).
 
 ## Cấu trúc thư mục
 
 ```
 skills/
-├── apm.yml                    ← Entry point chính
-├── skills/                    ← Hướng dẫn cho AI
-│   ├── languages/             ← Theo ngôn ngữ lập trình
-│   │   ├── dart/
-│   │   ├── python/
-│   │   ├── javascript/
-│   │   └── swift/
-│   ├── workflow/              ← Quy trình làm việc
-│   ├── architecture/          ← Kiến trúc phần mềm
-│   ├── testing/               ← Kiểm thử
-│   └── devops/                ← DevOps & CI/CD
-├── mcps/                      ← MCP server configs
-│   ├── code-tools/
-│   ├── databases/
-│   ├── cloud/
-│   └── utilities/
-├── prompts/                   ← AI personas
+├── apm                        ← CLI tool chính
+├── apm.yml                    ← Entry point & Global config
+├── install.sh                 ← Script cài đặt 1 lệnh
+├── features/                  ← Tổ chức theo từng feature
+│   ├── dart/                  ← Flutter & Dart rules
+│   ├── swift/                 ← iOS & SwiftUI rules
+│   ├── javascript/            ← React & TypeScript rules
+│   ├── python/                ← Python & FastAPI rules
+│   ├── workflow/              ← Git, Code review, Task management
+│   ├── design/                ← UI/UX, Stitch, UI UX Pro Max
+│   ├── structure/             ← Architecture, Databases, Cloud
+│   ├── testing/               ← Unit test, Integration, E2E
+│   └── delivery/              ← CI/CD, Docker, Kubernetes
 ├── templates/                 ← Template cho dự án mới
 │   ├── flutter-project/
 │   ├── python-project/
 │   └── fullstack-project/
 └── docs/                      ← Tài liệu hệ thống
+    ├── feature-structure.md   ← Convention feature folders
+    ├── how-to-add-skill.md    ← Cách thêm skill mới
+    └── how-to-add-mcp.md      ← Cách thêm MCP mới
 ```
 
 ## Bắt đầu dự án mới
 
 ```bash
-# 1. Copy template phù hợp vào dự án
-cp ~/Desktop/skills/templates/flutter-project/apm.yml ./apm.yml
+# 1. Vào thư mục dự án
+cd your-project/
 
-# 2. Chỉnh sửa name và thêm skills/MCPs cần thiết
-nano apm.yml
+# 2. Khởi tạo & tự động inject
+apm init
 ```
 
-## Thêm skill mới
+## Tài liệu chi tiết
 
-1. Tạo file `.md` trong thư mục phù hợp trong `skills/`
-2. Thêm entry vào `apm.yml` trong section `skills:`
-
-## Thêm MCP mới
-
-1. Tạo file documentation `.md` trong thư mục phù hợp trong `mcps/`
-2. Thêm entry vào `apm.yml` trong section `mcpServers:`
-
-## Tài liệu thêm
-
+- [Feature Structure Convention](./feature-structure.md)
 - [Cách thêm skill mới](./how-to-add-skill.md)
 - [Cách thêm MCP mới](./how-to-add-mcp.md)

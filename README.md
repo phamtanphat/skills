@@ -1,6 +1,8 @@
-# 🤖 AI Skills & MCP Config
+# 🤖 AI Skills & MCP Config (APM)
 
-> Bộ skills, quy chuẩn code và MCP servers cho AI assistant (Claude, Cursor, Codex, Windsurf, Copilot...)
+> Bộ kỹ năng (Skills), quy chuẩn code chuẩn hóa (Mobile-First: Flutter, iOS, Android...) và tích hợp MCP servers cho AI Assistant (**Antigravity, Claude Code, Cursor, Windsurf, Codex, Copilot**).
+
+---
 
 ## ⚡ Cài đặt nhanh (1 lệnh)
 
@@ -8,93 +10,102 @@
 curl -fsSL https://raw.githubusercontent.com/phamtanphat/skills/main/install.sh | bash
 ```
 
-> Script sẽ tự động clone repo về `~/Desktop/skills/` và cài `apm` CLI vào PATH.
+> Script tự động clone repo về `~/Desktop/skills/` và cài đặt `apm` CLI vào PATH.
 
 ---
 
-## 🚀 Dùng trong dự án
+## 🚀 Cách sử dụng trong dự án
 
 ```bash
-# 1. Vào thư mục dự án
+# 1. Di chuyển vào thư mục dự án
 cd your-project/
 
-# 2. Khởi tạo (tự detect loại project: flutter, python, react...)
+# 2. Khởi tạo (tự động nhận diện công nghệ, tạo apm.yml, inject skills & gợi ý MCP)
 apm init
-
-# 3. Inject skills vào tất cả IDE đang dùng
-apm inject
 ```
 
-**Đó thôi.** APM sẽ tạo các file config phù hợp cho từng IDE:
+**APM sẽ tự động tạo cấu trúc phù hợp cho từng IDE:**
 
-| File được tạo | IDE |
-|---|---|
-| `CLAUDE.md` | Claude / Antigravity |
-| `.cursorrules` | Cursor |
-| `codex.md` | OpenAI Codex |
-| `.windsurfrules` | Windsurf / Codeium |
-| `.github/copilot-instructions.md` | GitHub Copilot / VSCode |
+| IDE / Trợ lý AI | File / Thư mục được tạo | Đặc điểm |
+|---|---|---|
+| **Antigravity (Google)** | `CLAUDE.md` | Inline toàn bộ nội dung skills |
+| **Claude Code** | `CLAUDE.md` + `.claude/skills/*.md` | Sử dụng `@import` theo skill |
+| **Cursor** | `.cursor/rules/*.mdc` + `.cursorrules` | Chuẩn `.mdc` mới & fallback |
+| **OpenAI Codex** | `AGENTS.md` + `.codex/skills/*.md` | Chuẩn multi-agent |
+| **Windsurf** | `.windsurfrules` + `.windsurf/rules/*.md` | Context rules |
+| **GitHub Copilot** | `.github/copilot-instructions.md` | Workspace instructions |
 
 ---
 
-## 📦 APM Commands
+## 📦 Lệnh CLI (`apm`)
 
 ```bash
-apm init              # Tạo apm.yml cho dự án (auto-detect project type)
-apm inject            # Inject skills vào tất cả IDE được detect
-apm inject --ide cursor  # Inject vào IDE cụ thể
-apm update            # Cập nhật skills repo từ GitHub
-apm status            # Xem trạng thái dự án
-apm list              # Liệt kê tất cả skills có sẵn
+apm init                 # Khởi tạo apm.yml, tự động inject và hiển thị MCP phù hợp
+apm inject               # Inject skills vào tất cả IDE được nhận diện trong máy
+apm inject --ide cursor  # Chỉ định inject cho một IDE cụ thể (antigravity, cursor, claude...)
+apm list                 # Liệt kê tất cả skills có sẵn theo từng feature
+apm status               # Xem trạng thái cấu hình & kết nối IDE trong dự án hiện tại
+apm update               # Cập nhật repo skills mới nhất từ GitHub
+apm help                 # Hướng dẫn chi tiết các lệnh
 ```
 
 ---
 
-## 📁 Cấu trúc
+## 📁 Cấu trúc thư mục
 
 ```
 skills/
-├── install.sh              ← Script cài đặt 1 lệnh
-├── apm                     ← CLI tool
-├── apm.yml                 ← Global config (skills + MCPs)
+├── apm                               ← CLI tool chính
+├── apm.yml                           ← Global config (Skills + MCP servers)
+├── install.sh                        ← Script cài đặt 1 lệnh
 │
-├── skills/                 ← Nội dung skills (markdown)
-│   ├── languages/          ← Dart/Flutter, Python, JavaScript
-│   ├── architecture/       ← Clean Architecture, Design Patterns
-│   ├── testing/            ← Unit Test, E2E
-│   ├── devops/             ← Docker, CI/CD
-│   └── workflow/           ← Git workflow, Code review
+├── features/                         ← Tổ chức theo Domain / Ngôn ngữ (Mobile-First)
+│   ├── dart/                         ← Flutter: Riverpod, BLoC, Clean Arch, Style Guide...
+│   ├── swift/                        ← iOS: SwiftUI, UIKit, Architecture patterns
+│   ├── javascript/                   ← React, TypeScript patterns
+│   ├── python/                       ← FastAPI, PEP8, Logic patterns
+│   ├── workflow/                     ← Git workflow, Code review process, Task management
+│   │   ├── mcps/                     ← Serena, Context7, GitHub, Git
+│   │   └── prompts/                  ← senior-dev, code-reviewer
+│   ├── design/                       ← UI/UX, Design System, Wireframes
+│   │   └── mcps/                     ← UI UX Pro Max (118k ⭐), Stitch, Fetch
+│   ├── structure/                    ← Kiến trúc & Hạ tầng hệ thống
+│   │   ├── skills/                   ← Clean Architecture, Design Patterns, Microservices
+│   │   ├── mcps/                     ← Supabase, Postgres, Redis, AWS, Vercel, GCP, Memory
+│   │   └── prompts/                  ← architect
+│   ├── testing/                      ← QA & Test Automation
+│   │   ├── skills/                   ← Unit Test, Integration Test, E2E Test
+│   │   └── mcps/                     ← Playwright
+│   └── delivery/                     ← CI/CD, Container & Triển khai
+│       ├── skills/                   ← Docker, Kubernetes, CI/CD Pipeline
+│       └── mcps/                     ← Brave Search
 │
-├── mcps/                   ← Docs cho từng MCP server
-│   ├── code-tools/         ← Serena, Context7, GitHub
-│   ├── databases/          ← Supabase, PostgreSQL, Redis
-│   ├── cloud/              ← AWS, Vercel
-│   └── utilities/          ← Stitch, Playwright, Fetch
+├── templates/                        ← Templates mẫu cho dự án mới
+│   ├── flutter-project/apm.yml
+│   ├── python-project/apm.yml
+│   └── fullstack-project/apm.yml
 │
-├── templates/              ← Template apm.yml theo loại project
-│   ├── flutter-project/
-│   ├── python-project/
-│   └── fullstack-project/
-│
-└── docs/                   ← Hướng dẫn thêm skill/MCP mới
+└── docs/                             ← Hướng dẫn mở rộng
+    ├── feature-structure.md          ← Quy ước tổ chức feature folders
+    ├── how-to-add-skill.md           ← Hướng dẫn thêm skill mới
+    └── how-to-add-mcp.md             ← Hướng dẫn thêm MCP mới
 ```
 
 ---
 
-## 🔧 Cập nhật skills
+## 🔌 Tích hợp MCP Servers
 
-```bash
-# Cập nhật repo
-apm update
+Khi chạy `apm init`, hệ thống sẽ gợi ý các công cụ MCP phù hợp với nhu cầu dự án:
 
-# Re-inject vào dự án
-apm inject
-```
+- **Code Intelligence**: `serena` (symbol search & refactor), `context7` (tra cứu docs chính xác).
+- **Design Intelligence**: `ui-ux-pro-max` (79 visual styles & design token generator), `stitch` (tạo wireframe Google).
+- **Database & Backend**: `supabase`, `postgres`, `redis`.
+- **Testing & Search**: `playwright`, `brave-search`.
 
-## ➕ Thêm skill mới
+---
 
-Xem [docs/how-to-add-skill.md](./docs/how-to-add-skill.md)
+## ➕ Mở rộng & Tùy chỉnh
 
-## ➕ Thêm MCP mới
-
-Xem [docs/how-to-add-mcp.md](./docs/how-to-add-mcp.md)
+- Xem [Quy ước cấu trúc Feature](./docs/feature-structure.md)
+- Xem [Hướng dẫn thêm Skill mới](./docs/how-to-add-skill.md)
+- Xem [Hướng dẫn thêm MCP mới](./docs/how-to-add-mcp.md)

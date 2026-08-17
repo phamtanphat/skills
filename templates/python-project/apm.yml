@@ -5,41 +5,45 @@ name: my-python-app            # ← Đổi tên dự án
 version: 1.0.0
 
 skills:
+  # --- coding ---
   - name: python-review
     description: Quy chuẩn PEP8 và Python best practices
-    path: ~/Desktop/skills/skills/languages/python/code-review.md
+    path: ~/Desktop/skills/features/python/skills/code-review.md
     activate:
       include: ["**/*.py"]
 
   - name: fastapi-patterns
     description: FastAPI patterns chuẩn
-    path: ~/Desktop/skills/skills/languages/python/fastapi-patterns.md
+    path: ~/Desktop/skills/features/python/skills/fastapi-patterns.md
     activate:
       include: ["**/*.py"]
 
-  - name: clean-architecture
-    description: Clean Architecture guide
-    path: ~/Desktop/skills/skills/architecture/clean-architecture.md
+  - name: git-workflow
+    description: Git workflow chuẩn
+    path: ~/Desktop/skills/features/workflow/skills/git-workflow.md
     activate:
       always: true
 
-  - name: docker-guide
-    description: Docker containerization guide
-    path: ~/Desktop/skills/skills/devops/docker-guide.md
+  # --- structure ---
+  - name: clean-architecture
+    description: Clean Architecture guide
+    path: ~/Desktop/skills/features/structure/skills/architecture/clean-architecture.md
     activate:
-      include: ["**/Dockerfile", "**/docker-compose*.yml"]
+      always: true
 
+  # --- testing ---
   - name: unit-test-guide
     description: Hướng dẫn viết unit test với pytest
-    path: ~/Desktop/skills/skills/testing/unit-test-guide.md
+    path: ~/Desktop/skills/features/testing/skills/unit-test-guide.md
     activate:
       include: ["**/test_*.py", "**/*_test.py"]
 
-  - name: git-workflow
-    description: Git workflow chuẩn
-    path: ~/Desktop/skills/skills/workflow/git-workflow.md
+  # --- delivery ---
+  - name: docker-guide
+    description: Docker containerization guide
+    path: ~/Desktop/skills/features/delivery/skills/docker-guide.md
     activate:
-      always: true
+      include: ["**/Dockerfile", "**/docker-compose*.yml"]
 
 mcpServers:
   serena:

@@ -1,20 +1,24 @@
 # Cách thêm Skill mới
 
-## Bước 1 — Xác định loại skill
+## Bước 1 — Xác định Feature
 
-| Loại skill | Thư mục |
-|-----------|---------|
-| Ngôn ngữ lập trình | `skills/languages/<tên-ngôn-ngữ>/` |
-| Quy trình làm việc | `skills/workflow/` |
-| Kiến trúc | `skills/architecture/` |
-| Testing | `skills/testing/` |
-| DevOps | `skills/devops/` |
+| Nhóm / Ngôn ngữ | Thư mục |
+|-----------------|---------|
+| Dart / Flutter | `features/dart/skills/` |
+| Swift / iOS | `features/swift/skills/` |
+| JavaScript / TypeScript / React | `features/javascript/skills/` |
+| Python / FastAPI | `features/python/skills/` |
+| Workflow / Git / Code Review | `features/workflow/skills/` |
+| UI/UX / Design | `features/design/skills/` |
+| Kiến trúc / Structure | `features/structure/skills/` |
+| Testing / QA | `features/testing/skills/` |
+| Delivery / DevOps | `features/delivery/skills/` |
 
 ## Bước 2 — Tạo file markdown
 
 ```bash
-# Ví dụ: Thêm skill Go language
-touch skills/languages/go/code-review.md
+# Ví dụ: Thêm skill Flutter Riverpod mới
+touch features/dart/skills/flutter/my-riverpod-rules.md
 ```
 
 ## Bước 3 — Viết nội dung skill
@@ -30,7 +34,7 @@ Giải thích skill này làm gì và khi nào dùng.
 - Rule 2
 
 ## Ví dụ
-\`\`\`go
+\`\`\`dart
 // Code example
 \`\`\`
 
@@ -43,11 +47,17 @@ Giải thích skill này làm gì và khi nào dùng.
 
 ```yaml
 skills:
-  - name: go-code-review         # tên unique, dùng kebab-case
-    description: Quy chuẩn Go
-    path: ./skills/languages/go/code-review.md
+  - name: my-riverpod-rules         # tên unique, dùng kebab-case
+    description: Quy chuẩn Riverpod
+    path: ./features/dart/skills/flutter/my-riverpod-rules.md
     activate:
-      include: ["**/*.go"]       # Kích hoạt theo loại file
+      include: ["**/*.dart"]       # Kích hoạt theo loại file
       # hoặc:
       # always: true             # Luôn kích hoạt
+```
+
+## Bước 5 — Kiểm tra
+
+```bash
+apm list
 ```

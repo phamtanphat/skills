@@ -11,7 +11,7 @@ Tìm MCP servers tại:
 
 | Feature | Thư mục doc | Ví dụ MCP |
 |---------|-------------|-----------|
-| Workflow / Code tools | `features/workflow/mcps/` | GitHub, Git, Context7, Serena |
+| Workflow / Code tools | `features/workflow/mcps/` | OpenSpec, GitHub, Git, Context7, Serena |
 | Design | `features/design/mcps/` | Stitch, Fetch, UI UX Pro Max |
 | Structure | `features/structure/mcps/` | Supabase, Postgres, Redis, AWS, Vercel, GCP, Filesystem, Memory |
 | Testing | `features/testing/mcps/` | Playwright |

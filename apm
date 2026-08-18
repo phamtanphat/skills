@@ -553,7 +553,10 @@ GENERIC_EOF
   echo -e "${BOLD}${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"
   echo ""
 
-  echo -e "  ${BOLD}${CYAN}[coding]${RESET} — Code intelligence"
+  echo -e "  ${BOLD}${CYAN}[workflow]${RESET} — Code & Spec intelligence"
+  echo -e "  ${GREEN}•${RESET} OpenSpec   ${DIM}(spec-driven development & task tracking)${RESET}"
+  echo -e "    ${DIM}npx -y openspec-mcp${RESET}"
+  echo -e "    ${DIM}→ docs: $SKILLS_DIR/features/workflow/mcps/openspec.md${RESET}"
   echo -e "  ${GREEN}•${RESET} Serena     ${DIM}(symbol search, refactoring)${RESET}"
   echo -e "    ${DIM}uvx --from git+https://github.com/oraios/serena serena start-mcp-server${RESET}"
   echo -e "  ${GREEN}•${RESET} Context7   ${DIM}(library docs, no hallucination)${RESET}"

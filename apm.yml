@@ -196,11 +196,19 @@ skills:
 mcpServers:
 
   # ══════════════════════════════
-  # FEATURE: coding — Code Tools
-  # Docs: ./features/coding/mcps/
+  # FEATURE: workflow — Code & Spec Tools
+  # Docs: ./features/workflow/mcps/
   # ══════════════════════════════
 
+  # OpenSpec — Spec-driven development, proposal & task tracking
+  # Docs: ./features/workflow/mcps/openspec.md
+  openspec:
+    command: npx
+    args: ["-y", "openspec-mcp"]
+    transport: stdio
+
   # Serena — Code intelligence, symbol search, refactoring
+  # Docs: ./features/workflow/mcps/serena.md
   serena:
     command: uvx
     args:
@@ -211,6 +219,7 @@ mcpServers:
     transport: stdio
 
   # Context7 — Library documentation fetcher (no hallucination)
+  # Docs: ./features/workflow/mcps/context7.md
   context7:
     command: npx
     args: ["-y", "@upstash/context7-mcp"]
@@ -219,7 +228,7 @@ mcpServers:
       CONTEXT7_API_KEY: "ctx7sk-31f118e9-1ca9-4dfc-8a59-4cd58ec0a630"
 
   # GitHub — Repository management, issues, PRs (Official MCP)
-  # Docs: ./features/coding/mcps/github.md
+  # Docs: ./features/workflow/mcps/github.md
   # github:
   #   command: npx
   #   args: ["-y", "@modelcontextprotocol/server-github"]
@@ -228,7 +237,7 @@ mcpServers:
   #     GITHUB_PERSONAL_ACCESS_TOKEN: "ghp_your_token_here"
 
   # Git — Local git operations (Official MCP)
-  # Docs: ./features/coding/mcps/git.md
+  # Docs: ./features/workflow/mcps/git.md
   # git:
   #   command: uvx
   #   args: ["mcp-server-git", "--repository", "."]

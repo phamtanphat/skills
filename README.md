@@ -65,7 +65,7 @@ skills/
 │   ├── javascript/                   ← React, TypeScript patterns
 │   ├── python/                       ← FastAPI, PEP8, Logic patterns
 │   ├── workflow/                     ← Git workflow, Code review process, Task management
-│   │   ├── mcps/                     ← Serena, Context7, GitHub, Git
+│   │   ├── mcps/                     ← OpenSpec, Serena, Context7, GitHub, Git
 │   │   └── prompts/                  ← senior-dev, code-reviewer
 │   ├── design/                       ← UI/UX, Design System, Wireframes
 │   │   └── mcps/                     ← UI UX Pro Max (118k ⭐), Stitch, Fetch
@@ -97,6 +97,7 @@ skills/
 
 Khi chạy `apm init`, hệ thống sẽ gợi ý các công cụ MCP phù hợp với nhu cầu dự án:
 
+- **Spec & Workflow**: `openspec` (spec-driven development & task tracking).
 - **Code Intelligence**: `serena` (symbol search & refactor), `context7` (tra cứu docs chính xác).
 - **Design Intelligence**: `ui-ux-pro-max` (79 visual styles & design token generator), `stitch` (tạo wireframe Google).
 - **Database & Backend**: `supabase`, `postgres`, `redis`.
